@@ -1,0 +1,14 @@
+{
+  "test_cases": 30,
+  "baseline_mean_per_image_iou": 0.8163286440286167,
+  "proposed_mean_per_image_iou": 0.8570090307071422,
+  "mean_paired_iou_improvement": 0.04068038667852569,
+  "median_paired_iou_improvement": 0.02074346808186922,
+  "improved_cases": 21,
+  "unchanged_cases": 0,
+  "worse_cases": 9,
+  "bootstrap_95ci_lower": 0.018164873036960023,
+  "bootstrap_95ci_upper": 0.06671188452104503,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 42
+}

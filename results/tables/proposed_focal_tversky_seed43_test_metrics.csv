@@ -1,0 +1,2 @@
+precision,recall,f1,iou,tp,fp,fn,tn,experiment,checkpoint_epoch,best_validation_iou
+0.9160909516657637,0.8998202805400006,0.9078827180195834,0.83130515573296,567271,51959,63156,1283694,proposed_focal_tversky_seed43,33,0.7888636408102008

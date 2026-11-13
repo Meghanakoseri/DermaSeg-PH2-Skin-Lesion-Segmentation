@@ -1,0 +1,38 @@
+{
+  "evaluation": "Boundary metrics on fixed PH2 test split",
+  "test_images": 30,
+  "resolution": "256x256",
+  "boundary_tolerance_pixels": 2,
+  "boundary_definition": "Inner binary boundary using 3x3 morphological erosion",
+  "aggregation": "Macro-average of per-image boundary metrics",
+  "models": {
+    "baseline": {
+      "boundary_precision": {
+        "mean": 0.41721591736509367,
+        "std": 0.1941682217072142
+      },
+      "boundary_recall": {
+        "mean": 0.4376604209046251,
+        "std": 0.20214326384344308
+      },
+      "boundary_f1": {
+        "mean": 0.423837989533826,
+        "std": 0.19163298349022362
+      }
+    },
+    "proposed": {
+      "boundary_precision": {
+        "mean": 0.4526938762586516,
+        "std": 0.2357574138113843
+      },
+      "boundary_recall": {
+        "mean": 0.475140341848001,
+        "std": 0.22272252296901707
+      },
+      "boundary_f1": {
+        "mean": 0.4605451569103264,
+        "std": 0.2268742453397778
+      }
+    }
+  }
+}

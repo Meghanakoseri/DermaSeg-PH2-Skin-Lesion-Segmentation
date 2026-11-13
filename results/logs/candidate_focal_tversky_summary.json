@@ -1,0 +1,8 @@
+{
+  "experiment": "candidate_focal_tversky",
+  "device": "cuda",
+  "best_validation_iou": 0.8159478407020635,
+  "training_seconds": 77.07151436805725,
+  "checkpoint": "models/checkpoints/candidate_focal_tversky_best.pt",
+  "log": "results/logs/candidate_focal_tversky.csv"
+}

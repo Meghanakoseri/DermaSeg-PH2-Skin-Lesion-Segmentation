@@ -1,0 +1,8 @@
+{
+  "experiment": "candidate_ce_dice",
+  "device": "cuda",
+  "best_validation_iou": 0.8148152832585582,
+  "training_seconds": 74.858647108078,
+  "checkpoint": "models/checkpoints/candidate_ce_dice_best.pt",
+  "log": "results/logs/candidate_ce_dice.csv"
+}

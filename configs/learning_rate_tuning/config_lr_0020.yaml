@@ -1,0 +1,54 @@
+project:
+  name: DermaSeg
+  image_size: 256
+  in_channels: 3
+  num_classes: 2
+  seed: 42
+data:
+  root: data/raw/PH2
+  split_manifest: data/splits/ph2_seed42.json
+  batch_size: 8
+  num_workers: 2
+  pin_memory: true
+  use_cache: true
+training:
+  epochs: 60
+  patience: 10
+  learning_rate: 0.002
+  weight_decay: 0.0001
+  optimizer: adamw
+  scheduler_factor: 0.5
+  scheduler_patience: 4
+  min_learning_rate: 1.0e-06
+  amp: true
+  gradient_clip_norm: 1.0
+  checkpoint_dir: models/checkpoints
+  log_dir: results/logs
+experiments:
+  baseline_ce:
+    loss: cross_entropy
+    dice_weight: 0.0
+  candidate_ce_dice:
+    loss: ce_dice
+    dice_weight: 0.5
+  candidate_ce_iou:
+    loss: ce_iou
+    dice_weight: 0.5
+  candidate_focal_tversky:
+    loss: focal_tversky
+    dice_weight: 0.5
+  proposed_ce_dice:
+    loss: ce_dice
+    dice_weight: 0.5
+  ablation_ce_tversky:
+    loss: ce_tversky
+    dice_weight: 0.5
+  tune_ce_lr_0020:
+    loss: cross_entropy
+    dice_weight: 0.0
+  tune_focal_tversky_lr_0020:
+    loss: focal_tversky
+    dice_weight: 0.5
+evaluation:
+  threshold: 0.5
+  output_dir: results

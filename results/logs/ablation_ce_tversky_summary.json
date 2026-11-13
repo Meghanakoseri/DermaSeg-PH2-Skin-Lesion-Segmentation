@@ -1,0 +1,8 @@
+{
+  "experiment": "ablation_ce_tversky",
+  "device": "cuda",
+  "best_validation_iou": 0.8100825821773519,
+  "training_seconds": 58.068023681640625,
+  "checkpoint": "models/checkpoints/ablation_ce_tversky_best.pt",
+  "log": "results/logs/ablation_ce_tversky.csv"
+}

@@ -1,0 +1,28 @@
+{
+  "dataset": "PH2 dermoscopic lesion segmentation",
+  "total_cases": 200,
+  "readable_cases": 200,
+  "dimension_mismatches": 0,
+  "non_binary_masks": 0,
+  "duplicate_original_images": 0,
+  "duplicate_lesion_masks": 0,
+  "distinct_raw_image_dimensions": 24,
+  "raw_width_min": 761,
+  "raw_width_max": 769,
+  "raw_height_min": 553,
+  "raw_height_max": 577,
+  "lesion_area_min_percent": 3.1351840334709107,
+  "lesion_area_max_percent": 98.31045645254629,
+  "lesion_area_mean_percent": 32.24446751308572,
+  "lesion_area_median_percent": 23.06356865026406,
+  "lesion_area_std_percent": 23.425179030757008,
+  "total_foreground_pixels": 28435641,
+  "total_background_pixels": 59727682,
+  "split_counts": {
+    "test": 30,
+    "train": 140,
+    "validation": 30
+  },
+  "split_seed": 42,
+  "target_resolution": "256 x 256"
+}

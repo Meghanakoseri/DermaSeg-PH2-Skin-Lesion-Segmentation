@@ -1,0 +1,17 @@
+field,description
+case_id,Unique PH2 case identifier
+split,"Frozen train, validation or test assignment"
+image_path,Path to original dermoscopic image
+mask_path,Path to expert lesion segmentation mask
+image_width,Original image width in pixels
+image_height,Original image height in pixels
+mask_width,Original mask width in pixels
+mask_height,Original mask height in pixels
+dimensions_match,Whether original image and mask dimensions match
+unique_mask_values,Distinct grayscale values present in mask
+is_binary_0_255,Whether mask contains exactly 0 and 255
+lesion_foreground_fraction,Fraction of mask pixels labelled lesion
+lesion_foreground_percent,Percentage of mask pixels labelled lesion
+image_red_mean,Mean red intensity on a 64x64 image thumbnail
+image_green_mean,Mean green intensity on a 64x64 image thumbnail
+image_blue_mean,Mean blue intensity on a 64x64 image thumbnail

@@ -1,0 +1,8 @@
+{
+  "experiment": "baseline_ce_seed43",
+  "device": "cuda",
+  "best_validation_iou": 0.8224372110756214,
+  "training_seconds": 120.9196228981018,
+  "checkpoint": "models/checkpoints/baseline_ce_seed43_best.pt",
+  "log": "results/logs/baseline_ce_seed43.csv"
+}

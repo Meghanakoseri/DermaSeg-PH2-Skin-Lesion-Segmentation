@@ -1,0 +1,8 @@
+{
+  "experiment": "tune_ce_lr_0020",
+  "device": "cuda",
+  "best_validation_iou": 0.817342909946225,
+  "training_seconds": 125.92861819267273,
+  "checkpoint": "models/checkpoints/tune_ce_lr_0020_best.pt",
+  "log": "results/logs/tune_ce_lr_0020.csv"
+}

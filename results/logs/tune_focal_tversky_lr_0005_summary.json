@@ -1,0 +1,8 @@
+{
+  "experiment": "tune_focal_tversky_lr_0005",
+  "device": "cuda",
+  "best_validation_iou": 0.8529104295963085,
+  "training_seconds": 123.6838309764862,
+  "checkpoint": "models/checkpoints/tune_focal_tversky_lr_0005_best.pt",
+  "log": "results/logs/tune_focal_tversky_lr_0005.csv"
+}

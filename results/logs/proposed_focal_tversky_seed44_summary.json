@@ -1,0 +1,8 @@
+{
+  "experiment": "proposed_focal_tversky_seed44",
+  "device": "cuda",
+  "best_validation_iou": 0.7875081831457861,
+  "training_seconds": 51.226613998413086,
+  "checkpoint": "models/checkpoints/proposed_focal_tversky_seed44_best.pt",
+  "log": "results/logs/proposed_focal_tversky_seed44.csv"
+}

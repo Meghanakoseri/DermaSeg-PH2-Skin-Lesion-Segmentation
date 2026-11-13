@@ -1,0 +1,47 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets and local config
+.env
+.streamlit/secrets.toml
+
+# Dataset and local-only generated split manifest (path-bearing)
+data/raw/
+data/processed/
+data/splits/ph2_seed42.json
+*.zip
+
+# Model weights (store separately; do not commit to ordinary Git history)
+models/checkpoints/*.pt
+models/checkpoints/*.pth
+
+# Large per-image prediction outputs and local audit with absolute paths
+results/predictions/
+results/audit/pairs.csv
+results/audit/audit_issues.txt
+
+# Keep experiment logs, compact result tables, plots, and split details tracked.
+
+# Local backup files
+*.bak
+
+# EDA file containing machine-specific absolute paths
+results/audit/eda_case_statistics.csv
+
+
+# Temporary experiment backups
+*.before_ablation
+*.bak
+
+# Local-only prediction files
+results/predictions/
+
+
+# PH2 source photographs: keep local until redistribution permission is confirmed
+results/audit/mask_visual_review.png
+results/graphs/test_error_case_panels.png
+
