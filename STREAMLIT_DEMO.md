@@ -1,46 +1,94 @@
-# Run the DermaSeg image-upload demo
+﻿# DermaSeg - Streamlit Demo
 
-The Streamlit app is an inference interface. Training is not performed by the app.
 
-## 1. Put the trained checkpoint in the project
 
-Copy the selected trained checkpoint from Google Drive into:
+The Streamlit application performs skin-lesion segmentation using a trained U-Net model. It supports image upload, prediction, visual comparison and mask downloads.
 
-```text
-models/checkpoints/candidate_focal_tversky_best.pt
-```
 
-Optionally copy the baseline checkpoint to:
 
-```text
-models/checkpoints/baseline_ce_best.pt
-```
+## 1. Required model checkpoints
 
-Do not commit the PH² dataset archive or large model checkpoints to an ordinary GitHub repository. The app expects the checkpoint file to be present locally when it starts.
+
+
+Place these two trained checkpoint files inside `models/checkpoints/`:
+
+
+
+- `tune_focal_tversky_lr_0005_best.pt`
+
+- `tune_ce_lr_0005_best.pt`
+
+
+
+The first is the proposed CE + Focal Tversky model. The second is the Cross-Entropy baseline.
+
+
+
+The model weights are excluded from Git and must be downloaded separately from the project backup.
+
+
 
 ## 2. Install dependencies
 
-Create/activate a Python environment, then install the project requirements:
 
-```bash
+
+```powershell
+
 pip install -r requirements.txt
+
 ```
 
-For the Lenovo laptop, run CPU inference; a CUDA GPU is not required for a single-image demo. If installing PyTorch locally, choose the CPU build from the official PyTorch installation selector.
 
-## 3. Start the local app
 
-From the root of the project folder:
+## 3. Launch the application
 
-```bash
-streamlit run app.py
+
+
+```powershell
+
+python -m streamlit run app.py
+
 ```
 
-Streamlit opens a local browser page (normally `http://localhost:8501`). Upload one JPG, PNG, BMP or TIFF dermoscopic image. The app displays the input, binary predicted mask and overlay, and lets you download the mask as PNG.
 
-## 4. Limitations
 
-- This is an academic segmentation demo, not a diagnostic or clinical tool.
-- The model has been trained and evaluated on PH² images; performance on arbitrary cameras, image sources, skin tones, or acquisition conditions is not established.
-- The interface uses the same 256 × 256 resize and 0.5 lesion-probability threshold as the reported evaluation.
-- A public Streamlit deployment requires a reliable way to provide the model checkpoint at runtime. Do not put large `.pt` files or PH² data in ordinary Git history. Use an approved model-artifact host or Git LFS only after checking storage/bandwidth limits and dataset terms.
+Open http://localhost:8501 in your browser.
+
+
+
+## 4. Using the application
+
+
+
+1\. Select the baseline or proposed model from the sidebar.
+
+2\. Adjust the prediction threshold if required.
+
+3\. Upload a dermoscopic image.
+
+4\. Optionally upload its matching ground-truth lesion mask.
+
+5\. View the original image, ground-truth mask, predicted mask, overlap map and overlays.
+
+6\. Inspect the prediction summary and download the predicted mask or overlay.
+
+
+
+When a matching ground-truth mask is supplied, the application calculates per-image IoU, Dice/F1, precision and recall.
+
+
+
+## 5. Limitations
+
+
+
+- This is an academic research demonstration, not a medical diagnostic tool.
+
+- Ground-truth comparison metrics are meaningful only when the uploaded mask corresponds to the uploaded image.
+
+- The application performs inference; it does not train the model.
+
+- Clinical use and diagnostic decisions are outside the scope of this project.
+
+
+
