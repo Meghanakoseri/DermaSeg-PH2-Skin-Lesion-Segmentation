@@ -4,7 +4,7 @@
 Binary semantic segmentation of skin lesions in dermoscopic photographs.
 
 ## Dataset source
-The project assignment identifies the PH2 dataset and provides this source:
+The project assignment identifies the PH² dataset and provides this acquisition source:
 https://www.kaggle.com/datasets/spacesurfer/ph2-dataset
 
 ## Dataset contents used
@@ -26,10 +26,10 @@ https://www.kaggle.com/datasets/spacesurfer/ph2-dataset
 - Height range: 553 to 577 pixels.
 - Distinct observed dimension combinations: 24.
 
-The assignment describes PH2 images as 768 x 560. The downloaded archive
-contains some small per-image dimension variations; the actual observed
-dimensions are documented in `raw_dimension_distribution.csv`.
-Every corresponding image-mask pair has matching dimensions.
+The assignment describes PH² images as 768 × 560. The acquired archive
+contains small per-image dimension variations; the observed dimensions are
+documented in `raw_dimension_distribution.csv`. Every paired image and mask
+has matching dimensions.
 
 ## Lesion mask characteristics
 - Mask encoding: binary grayscale values 0 and 255.
@@ -39,31 +39,32 @@ Every corresponding image-mask pair has matching dimensions.
 - Median lesion area: 23.06%.
 
 ## Split protocol
-A fixed split with seed 42 is used in all primary experiments:
+A fixed split with seed 42 is used in the primary experiments:
 - Training: 140 cases.
 - Validation: 30 cases.
 - Test: 30 cases.
 
 The split is stratified using five lesion-area groups. No case is shared
-between the three partitions.
+between partitions. Exact case membership is recorded in
+`data/splits/ph2_seed42_details.csv`.
 
 ## Preprocessing
-Images are converted to RGB and resized to 256 x 256 using bilinear
+Images are converted to RGB and resized to 256 × 256 using bilinear
 interpolation. Binary masks are resized using nearest-neighbour interpolation.
 
 ## Intended use
 Academic research and educational demonstration of binary lesion segmentation.
 
 ## Limitations and cautions
-- PH2 is a small dataset with 200 cases.
+- PH² is a small dataset with 200 cases.
 - Performance on this dataset does not establish clinical validity or
-  generalization to other populations, devices or acquisition conditions.
+generalization to other populations, devices or acquisition conditions.
 - The model is not a diagnostic system.
 - Dataset redistribution and licensing conditions must be checked at the
-  original source before redistribution.
+original source before redistribution. The public repository does not include
+PH² images or masks.
 
-## Files accompanying this card
-- `eda_case_statistics.csv`
+## Accompanying audit summaries
 - `data_dictionary.csv`
 - `raw_dimension_distribution.csv`
 - `eda_summary.json`

@@ -1,0 +1,32 @@
+{
+  "environment_name": "colab_training_runtime",
+  "captured_at_utc": "2026-11-14T06:44:14.192162+00:00",
+  "capture_note": "Captured from the original connected Colab runtime. Represents its current state; exact training-time equivalence assumes packages were not changed after training.",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "python_version": "3.13.16",
+  "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "torch_version": "2.14.1+cu130",
+  "torch_threads": 1,
+  "gpu": {
+    "cuda_available": true,
+    "cuda_version": "13.0",
+    "cudnn_version": 92800,
+    "device_name": "Tesla T4",
+    "device_memory_bytes": 15637086208
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "torchvision": "0.29.1+cu130",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "Pillow": "11.3.0",
+    "PyYAML": "6.0.3",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.10.0",
+    "tqdm": "4.67.3",
+    "streamlit": null
+  },
+  "pip_freeze_exit_code": 0
+}

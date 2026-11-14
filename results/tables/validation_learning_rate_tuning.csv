@@ -1,0 +1,4 @@
+learning_rate,baseline_ce_validation_iou,proposed_validation_iou,selection_basis
+0.001,0.81042,0.81595,validation IoU only
+0.0005,0.84612,0.85291,validation IoU only; selected
+0.002,0.81734,0.81384,validation IoU only

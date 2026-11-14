@@ -1,0 +1,13 @@
+{
+  "split": "validation",
+  "n_images": 30,
+  "threshold": 0.5,
+  "corruptions": {
+    "brightness_0.8": "multiply RGB values by 0.8",
+    "brightness_1.2": "multiply RGB values by 1.2",
+    "gaussian_noise_std_0.03": "add Gaussian noise with standard deviation 0.03 in [0,1] range",
+    "3x3_mean_blur": "3x3 average filter",
+    "translation_4px": "translate content 4 pixels right and 4 pixels down with reflected padding"
+  },
+  "interpretation": "Exploratory validation-only sensitivity. Validation has already been used for model selection; these results are descriptive and must not be used to retune the model. The test split is not accessed by this script."
+}

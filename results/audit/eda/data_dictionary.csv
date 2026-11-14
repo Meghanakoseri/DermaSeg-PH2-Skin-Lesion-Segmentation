@@ -1,0 +1,15 @@
+field,type,definition,unit_or_values
+case_id,string,PH2 case identifier; used to pair image/mask and prevent split overlap,IMD###
+image_path_relative,relative path,Path to original RGB dermoscopic image relative to data root,path
+mask_path_relative,relative path,Path to expert lesion segmentation mask relative to data root,path
+width,integer,Original image width before resizing,pixels
+height,integer,Original image height before resizing,pixels
+image_mode,categorical,PIL mode of original image before RGB conversion,RGB/RGBA/etc.
+mask_values,categorical set,Unique grayscale values present in lesion mask,"expected 0,255"
+foreground_pixels,integer,Number of mask pixels assigned to lesion,pixels
+background_pixels,integer,Number of mask pixels assigned to background,pixels
+lesion_area_fraction,float,Foreground pixels divided by all mask pixels,"fraction in [0,1]"
+red_mean/green_mean/blue_mean,float,Per-image mean RGB intensity after conversion to RGB and scaling,0 to 1
+red_std/green_std/blue_std,float,Per-image standard deviation of RGB intensity,0 to 1
+image_sha256,string,SHA-256 checksum used to detect exact duplicate image files,hex digest
+mask_sha256,string,SHA-256 checksum for lesion mask file,hex digest

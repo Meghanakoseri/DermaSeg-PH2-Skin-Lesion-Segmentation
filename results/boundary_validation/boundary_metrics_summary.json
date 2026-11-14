@@ -1,0 +1,8 @@
+{
+  "split": "validation",
+  "n_images": 30,
+  "inner_boundary": "3x3 erosion",
+  "tolerance_pixels": 2,
+  "averaging": "macro mean and sample standard deviation across images",
+  "warning": "Descriptive analysis only; do not use for model selection."
+}

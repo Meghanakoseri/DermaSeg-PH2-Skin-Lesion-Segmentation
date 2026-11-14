@@ -16,7 +16,7 @@ from src.model import UNet
 from src.utils import ensure_dirs, get_device, load_config, save_json, set_seed
 
 
-def run_epoch(model, loader, criterion, optimizer, device, scaler=None, amp=False):
+def run_epoch(model, loader, criterion, optimizer, device, scaler=None, amp=False, gradient_clip_norm=1.0):
     training = optimizer is not None
     model.train(training)
     loss_sum = 0.0
@@ -41,7 +41,7 @@ def run_epoch(model, loader, criterion, optimizer, device, scaler=None, amp=Fals
             if training:
                 scaler.scale(loss).backward()
                 scaler.unscale_(optimizer)
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                torch.nn.utils.clip_grad_norm_(model.parameters(), gradient_clip_norm)
                 scaler.step(optimizer)
                 scaler.update()
 
@@ -82,7 +82,7 @@ def main():
         batch_size=config["data"]["batch_size"],
         shuffle=True,
         num_workers=workers,
-        pin_memory=use_cuda,
+        pin_memory=bool(config["data"].get("pin_memory", use_cuda)) and use_cuda,
         persistent_workers=workers > 0,
     )
     val_loader = DataLoader(
@@ -90,7 +90,7 @@ def main():
         batch_size=config["data"]["batch_size"],
         shuffle=False,
         num_workers=workers,
-        pin_memory=use_cuda,
+        pin_memory=bool(config["data"].get("pin_memory", use_cuda)) and use_cuda,
         persistent_workers=workers > 0,
     )
 
@@ -99,6 +99,9 @@ def main():
         config["project"]["num_classes"],
     ).to(device)
     criterion = SegmentationLoss(exp["loss"], exp.get("dice_weight", 0.5))
+    optimizer_name = str(config["training"].get("optimizer", "adamw")).lower()
+    if optimizer_name != "adamw":
+        raise ValueError(f"Unsupported optimizer {optimizer_name!r}; this project currently implements AdamW.")
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=config["training"]["learning_rate"],
@@ -139,10 +142,12 @@ def main():
             train_metrics = run_epoch(
                 model, train_loader, criterion, optimizer, device,
                 scaler=scaler, amp=config["training"]["amp"],
+                gradient_clip_norm=float(config["training"].get("gradient_clip_norm", 1.0)),
             )
             val_metrics = run_epoch(
                 model, val_loader, criterion, None, device,
                 scaler=None, amp=config["training"]["amp"],
+                gradient_clip_norm=float(config["training"].get("gradient_clip_norm", 1.0)),
             )
             scheduler.step(val_metrics["iou"])
             epoch_seconds = time.time() - epoch_start

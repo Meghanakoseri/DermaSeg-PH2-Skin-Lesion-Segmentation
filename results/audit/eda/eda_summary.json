@@ -1,0 +1,32 @@
+{
+  "dataset": "PH2",
+  "n_cases": 200,
+  "readable_pairs": 200,
+  "missing_or_invalid_pairs": 0,
+  "unique_case_ids": 200,
+  "image_sha256_duplicates": 0,
+  "distinct_raw_dimension_combinations": 24,
+  "width_min": 761,
+  "width_max": 769,
+  "height_min": 553,
+  "height_max": 577,
+  "lesion_area_fraction_min": 0.031351840334709107,
+  "lesion_area_fraction_max": 0.9831045645254629,
+  "lesion_area_fraction_mean": 0.32244467513085723,
+  "lesion_area_fraction_median": 0.2306356865026406,
+  "lesion_area_fraction_std": 0.23425179030757012,
+  "foreground_pixels_total": 28435641,
+  "background_pixels_total": 59727682,
+  "foreground_pixel_fraction_over_all_pixels": 0.3225336799067794,
+  "mean_rgb_intensity": {
+    "red": 0.7533503925800323,
+    "green": 0.5765432718396187,
+    "blue": 0.48854476425796745
+  },
+  "mask_encoding": "binary values 0 and 255",
+  "input_size": [
+    256,
+    256
+  ],
+  "split_protocol": "fixed 140/30/30 seed-42 allocation; see split details file"
+}

@@ -1,0 +1,5 @@
+loss,validation_iou,seed,learning_rate
+cross_entropy,0.81042,42,0.001
+ce_dice,0.81482,42,0.001
+ce_iou,0.81592,42,0.001
+ce_focal_tversky,0.81595,42,0.001

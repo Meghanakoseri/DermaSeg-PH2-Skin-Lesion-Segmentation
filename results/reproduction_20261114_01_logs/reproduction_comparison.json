@@ -1,0 +1,43 @@
+{
+  "source": "User-provided Colab training summaries and verified artifact-check outputs, 14 November 2026",
+  "device": "NVIDIA Tesla T4",
+  "split": {
+    "train": 140,
+    "validation": 30,
+    "test": 30,
+    "seed": 42
+  },
+  "note": "Fresh reproduction training used only train and validation records. No test evaluation was performed. The local bundle does not include the original .pt checkpoints or full per-epoch CSV files; these remain in the user's Google Drive project.",
+  "results": [
+    {
+      "model": "CE baseline",
+      "experiment": "reproduction_ce_lr_0005",
+      "seed": 42,
+      "learning_rate": 0.0005,
+      "epochs_completed": 60,
+      "best_epoch": 57,
+      "validation_precision": 0.912588,
+      "validation_recall": 0.920743,
+      "validation_f1": 0.916647,
+      "validation_iou": 0.8461204751813136,
+      "training_seconds_summary": 122.23674178123474,
+      "checkpoint_verified": true,
+      "log_verified": true
+    },
+    {
+      "model": "CE + Focal Tversky",
+      "experiment": "reproduction_focal_tversky_lr_0005",
+      "seed": 42,
+      "learning_rate": 0.0005,
+      "epochs_completed": 60,
+      "best_epoch": 57,
+      "validation_precision": 0.927027,
+      "validation_recall": 0.914295,
+      "validation_f1": 0.920617,
+      "validation_iou": 0.8529104295963085,
+      "training_seconds_summary": 125.35612177848816,
+      "checkpoint_verified": true,
+      "log_verified": true
+    }
+  ]
+}

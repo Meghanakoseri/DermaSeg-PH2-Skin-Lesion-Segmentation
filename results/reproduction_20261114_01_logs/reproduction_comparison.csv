@@ -1,0 +1,3 @@
+model,experiment,seed,learning_rate,epochs_completed,best_epoch,validation_precision,validation_recall,validation_f1,validation_iou,training_seconds_summary,checkpoint_verified,log_verified
+CE baseline,reproduction_ce_lr_0005,42,0.0005,60,57,0.912588,0.920743,0.916647,0.8461204751813136,122.23674178123474,True,True
+CE + Focal Tversky,reproduction_focal_tversky_lr_0005,42,0.0005,60,57,0.927027,0.914295,0.920617,0.8529104295963085,125.35612177848816,True,True

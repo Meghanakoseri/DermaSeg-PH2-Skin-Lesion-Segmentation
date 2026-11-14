@@ -1,0 +1,27 @@
+{
+  "environment_name": "local_demo",
+  "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "python_version": "3.12.4",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu_model": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+  "logical_cpu_count": 8,
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "Pillow": "13.0.0",
+    "PyYAML": "6.0.3",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "tqdm": "4.70.1",
+    "streamlit": "1.67.0"
+  },
+  "hardware": {
+    "cuda_available": false,
+    "cuda_device": null,
+    "cuda_version": null,
+    "torch_num_threads": 6
+  },
+  "pip_freeze_exit_code": 0
+}

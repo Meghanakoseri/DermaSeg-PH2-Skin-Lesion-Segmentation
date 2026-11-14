@@ -26,7 +26,12 @@ def main():
     device = get_device()
     records = load_split(config["data"]["split_manifest"], "test")
     dataset = PH2Dataset(records, config["project"]["image_size"], augment=False)
-    loader = DataLoader(dataset, batch_size=config["data"]["batch_size"], shuffle=False)
+    loader = DataLoader(
+        dataset,
+        batch_size=config["data"]["batch_size"],
+        shuffle=False,
+        pin_memory=bool(config["data"].get("pin_memory", device.type == "cuda")) and device.type == "cuda",
+    )
 
     model = UNet(
         config["project"]["in_channels"],
